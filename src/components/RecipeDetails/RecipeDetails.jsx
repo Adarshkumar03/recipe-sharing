@@ -46,11 +46,7 @@ const RecipeDetails = () => {
 
       {recipeData && (
         <div className="bg-white rounded-lg shadow-md p-6 flex">
-          {" "}
-          {/* Use flexbox for layout */}
           <div className="w-1/3">
-            {" "}
-            {/* Adjust image width as needed */}
             <img
               src={recipeData.img}
               alt={recipeData.title}
@@ -58,18 +54,16 @@ const RecipeDetails = () => {
             />
           </div>
           <div className="w-2/3 ml-6">
-            {" "}
-            {/* Adjust right section width as needed */}
-            <h1 className="text-3xl font-bold text-teal-600 mb-2">
+            <h1 className="text-4xl font-bold text-teal-600 mb-2">
               {recipeData.title}
             </h1>
-            <p className="text-gray-600 mb-4">By: {recipeData.username}</p>
+            <p className="text-gray-600 mb-4"><span className="font-semibold">Category:</span> {recipeData.category}</p>
+            <p className="text-gray-600 mb-4"><span className="font-semibold">User:</span> {recipeData.username}</p>
+            
             <h2 className="text-2xl font-semibold text-teal-600 mb-3">
               Ingredients
             </h2>
             <ul className="list-none ml-6 mb-6">
-              {" "}
-              {/* No bullet points */}
               {recipeData.ingredients.split(";").map((ingredient, index) => (
                 <li key={index} className="text-gray-700">
                   {ingredient}
